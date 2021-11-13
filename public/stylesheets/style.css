@@ -1,0 +1,96 @@
+body {
+  box-sizing: border-box;
+}
+.discounted {
+  text-decoration: line-through;
+}
+.search-button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+.search-input {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+}
+.multiple__filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.img__vodafone {
+  margin-top: 3px;
+  width: 100%;
+}
+
+.search-box:hover {
+  transform: scale(1.1);
+}
+.content__wraper {
+  margin: 10px 20px;
+}
+
+#filter__btn {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  position: relative;
+}
+#filter__btn:hover {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+}
+
+#form {
+  border: 1px solid black;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  display: none;
+}
+.fa-sort {
+  padding: 0 5px;
+}
+
+.search__byPrice {
+  width: 400px;
+  height: 40px;
+}
+
+#container {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.phone__card {
+  text-align: center;
+}
+.search-box {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
