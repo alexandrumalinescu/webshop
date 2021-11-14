@@ -95,7 +95,7 @@ let products = [
 ];
 
 function hideFilterBtn() {
-  document.getElementById("filter__btn").style.display = "none";
+  //document.getElementById("filter__btn").style.display = "none";
   document.getElementById("form").style.display = "block";
 }
 
@@ -128,8 +128,8 @@ function displayProducts(filterFunction) {
       html += `<p>${product.rating}
       
        (Average: ${getAverageRatingBySelectedBrand(product.brand)})
-        </p>`;
-
+        </p>     
+        `;
       for (let i = 1; i <= 5; i++) {
         if (Math.floor(product.rating >= i)) {
           html += `<i class="fa fa-star checked"></i>`;
@@ -140,7 +140,9 @@ function displayProducts(filterFunction) {
     } else {
       html += `<p>-</p>`;
     }
+    html += `<button class="buy__btn">Cumpara</button>`;
     html += "</div>";
+
     html += `</li>`;
   });
 
