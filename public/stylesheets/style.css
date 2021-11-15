@@ -109,3 +109,11 @@ a {
   font-weight: 700;
   border-radius: 5px;
 }
+.buy__btn a {
+  list-style: none;
+  color: white;
+  text-decoration: none;
+}
+.buy__btn a:hover {
+  color: white;
+}

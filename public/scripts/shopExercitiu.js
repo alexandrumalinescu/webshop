@@ -111,7 +111,7 @@ function displayProducts(filterFunction) {
     <div class='phone__card'>
     <img src="${product.image}" alt="Phone placeholder"/>
     <li class="phone">
-        <h2><a href="details.html?phone=${product.name}" target="_blank">${product.brand} ${product.name}</a></h2>`;
+        <h2 ><a href="/details/${product.name}" target="_blank">${product.brand} ${product.name}</a></h2>`;
     if (product.discount > 0) {
       let finalPrice = product.price - product.discount;
       html += `
@@ -140,7 +140,7 @@ function displayProducts(filterFunction) {
     } else {
       html += `<p>-</p>`;
     }
-    html += `<button class="buy__btn">Cumpara</button>`;
+    html += `<button class="buy__btn"><a href="/details/${product.name}" target="_blank">Cumpara</button>`;
     html += "</div>";
 
     html += `</li>`;
@@ -386,6 +386,7 @@ function handleForm(e) {
   let selectedBrandArray = getArraysInputs(selectedBrands);
   let selectedPriceArray = getArraysInputs(selectedPrice);
   let selectedOsArray = getArraysInputs(selectedOs);
+  console.log(selectedBrandArray);
 
   // let obj= {brand: selectedBrandArray,
   //           price: selectedPriceArray,
@@ -448,3 +449,9 @@ function handleForm(e) {
     );
   }
 }
+
+// function buyProduct() {
+//   let buy = document.getElementById("buyProduct").getAttribute("value");
+
+//   console.log(buy);
+// }

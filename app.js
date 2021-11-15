@@ -26,7 +26,8 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/phones", phonesRouter);
 app.use("/login", loginRouter);
-app.use("/details", detailsRouter);
+//app.use("/details", detailsRouter);
+app.use("/details/:phone", detailsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

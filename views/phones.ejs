@@ -35,14 +35,15 @@
                     <button type="button" id="filter__btn" onclick=hideFilterBtn()><i class="fas fa-sort"></i>
                         Filtre</button>
 
-                    <form id='form' method="get">
+                    <form id='form' action="/phones">
                         <fieldset id="filterBrand">
                             <legend>Filter by Brand:</legend>
-                            <input type='checkbox' id='samsung' value="Samsung"><span>Samsung</span><br>
-                            <input type='checkbox' id='motorola' value="Motorola"><span>Motorola</span><br>
-                            <input type='checkbox' id='apple' value="Apple"><span>Apple</span><br>
-                            <input type='checkbox' id='xiaomi' value="Xiaomi"><span>Xiaomi</span><br>
-                            <input type='checkbox' id='google' value="Google"><span>Google</span><br>
+                            <input type='checkbox' name="brand[]" id='samsung' value="Samsung"><span>Samsung</span><br>
+                            <input type='checkbox' name="brand[]" id='motorola'
+                                value="Motorola"><span>Motorola</span><br>
+                            <input type='checkbox' name="brand[]" id='apple' value="Apple"><span>Apple</span><br>
+                            <input type='checkbox' name="brand[]" id='xiaomi' value="Xiaomi"><span>Xiaomi</span><br>
+                            <input type='checkbox' name="brand[]" id='google' value="Google"><span>Google</span><br>
                         </fieldset>
 
                         <fieldset id="filterPrice">
