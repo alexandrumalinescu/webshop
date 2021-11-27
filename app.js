@@ -1,5 +1,6 @@
 var createError = require("http-errors");
 var express = require("express");
+const bodyparser = require("body-parser");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
@@ -9,6 +10,8 @@ var usersRouter = require("./routes/users");
 var phonesRouter = require("./routes/phones");
 const loginRouter = require("./routes/login");
 const detailsRouter = require("./routes/details");
+const registerRouter = require("./routes/register");
+const login2Router = require("./routes/login2");
 
 var app = express();
 
@@ -26,8 +29,10 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/phones", phonesRouter);
 app.use("/login", loginRouter);
+app.use("/login2", login2Router);
 //app.use("/details", detailsRouter);
 app.use("/details/:phone", detailsRouter);
+app.use("/register", registerRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

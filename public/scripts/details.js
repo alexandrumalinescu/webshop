@@ -5,10 +5,12 @@ let productObj = {
       brand: "Samsung",
       operating_system: "Android",
       price: 899,
-      discount: 0,
+      discount: 60,
       quantity: 2000,
       availability_date: "2020-11-24",
       rating: 4,
+      image:
+        "https://static.vodafone.ro/010_0000s_0000s_0000_sm-f711_zflip3_5g_openfront_phantomblack_210611.jpg?360x360",
     },
     {
       name: "Galaxy a52s 5G",
@@ -19,6 +21,8 @@ let productObj = {
       quantity: 2500,
       availability_date: "2021-08-17",
       rating: 5,
+      image:
+        "https://static.vodafone.ro/010_0000s_0000s_0000_sm-f711_zflip3_5g_openfront_phantomblack_210611.jpg?360x360",
     },
     {
       name: "Galaxy s21",
@@ -28,7 +32,9 @@ let productObj = {
       discount: 50,
       quantity: 800,
       availability_date: "2021-01-29",
-      rating: -1,
+      rating: 4,
+      image:
+        "https://static.vodafone.ro/010_0000s_0000s_0000_sm-f711_zflip3_5g_openfront_phantomblack_210611.jpg?360x360",
     },
     {
       name: "Moto G30",
@@ -39,6 +45,7 @@ let productObj = {
       quantity: 1000,
       availability_date: "2021-03-17",
       rating: 4.5,
+      image: "https://static.vodafone.ro/010_0002_2020_Capri.png?360x360",
     },
     {
       name: "iPhone 13",
@@ -49,6 +56,8 @@ let productObj = {
       quantity: 3500,
       availability_date: "2021-09-14",
       rating: 5,
+      image:
+        "https://static.vodafone.ro/iPhone-12mini-purple-front.jpg?360x360",
     },
     {
       name: "iPhone 13 Pro",
@@ -56,9 +65,11 @@ let productObj = {
       operating_system: "iOS",
       price: 5699,
       discount: 0,
-      quantity: 4,
+      quantity: 3000,
       availability_date: "2021-09-14",
       rating: 5,
+      image:
+        "https://static.vodafone.ro/iPhone-12mini-purple-front.jpg?360x360",
     },
     {
       name: "Mi 11 Lite 5G",
@@ -69,6 +80,8 @@ let productObj = {
       quantity: 1500,
       availability_date: "2021-03-29",
       rating: -1,
+      image:
+        "https://static.vodafone.ro/010_0001s_0000s_0003_K3S_n.png?360x360",
     },
     {
       name: "Pixel 6",
@@ -78,11 +91,12 @@ let productObj = {
       discount: 0,
       quantity: 0,
       availability_date: "2021-10-25",
-      rating: -1,
+      rating: 3,
+      image: "https://static.vodafone.ro/010_0001_NTH_ID-RGB.png?360x360",
     },
+    //let standardFee =  {standard_delivery_fee: 35}
+    //let freeDelivery = {free_delivery_min_price: 500}
   ],
-  standard_delivery_fee: 35,
-  free_delivery_min_price: 500,
 };
 
 const url = window.location.pathname;

@@ -4,3 +4,34 @@ body main {
   justify-content: center;
   margin-top: 150px;
 }
+
+.main__btn {
+  background-color: red;
+  width: 100%;
+  border: none;
+}
+.main__btn:hover {
+  background-color: red;
+  transform: scale(1.1);
+}
+
+.fas {
+  color: red;
+  padding-right: 5px;
+}
+
+p {
+  flex-direction: fle;
+  font-size: 14px;
+  align-self: flex-end;
+  margin-right: 0;
+  text-align: end;
+}
+
+p a {
+  text-decoration: none;
+  color: red;
+}
+p a:hover {
+  color: red;
+}

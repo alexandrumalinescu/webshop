@@ -356,102 +356,106 @@ function multiplePrices(item, price) {
 }
 
 //----sort by multiple filters----
-const filterForm = document.getElementById("form");
-filterForm.addEventListener("submit", handleForm);
-function handleForm(e) {
-  e.preventDefault();
+// const filterForm = document.getElementById("form");
+// filterForm.addEventListener("submit", handleForm);
+// function handleForm(e) {
+//   // e.preventDefault();
 
-  document.getElementById("filter__btn").style.display = "block";
-  document.getElementById("form").style.display = "none";
+//   document.getElementById("filter__btn").style.display = "block";
+//   document.getElementById("form").style.display = "none";
 
-  let selectedBrands = document.querySelectorAll(
-    "#filterBrand input[type=checkbox]:checked"
-  );
-  let selectedPrice = document.querySelectorAll(
-    "#filterPrice input[type=radio]:checked"
-  );
-  let selectedOs = document.querySelectorAll(
-    "#filterOs input[type=radio]:checked"
-  );
+//   let selectedBrands = document.querySelectorAll(
+//     "#filterBrand input[type=checkbox]:checked"
+//   );
+//   let selectedPrice = document.querySelectorAll(
+//     "#filterPrice input[type=radio]:checked"
+//   );
+//   let selectedOs = document.querySelectorAll(
+//     "#filterOs input[type=radio]:checked"
+//   );
 
-  function getArraysInputs(inputs) {
-    return Object.values(
-      Array.from(inputs).reduce(
-        (a, input) => ({ ...a, [input.id]: input.value }),
-        {}
-      )
-    );
-  }
+//   function getArraysInputs(inputs) {
+//     return Object.values(
+//       Array.from(inputs).reduce(
+//         (a, input) => ({ ...a, [input.id]: input.value }),
+//         {}
+//       )
+//     );
+//   }
 
-  let selectedBrandArray = getArraysInputs(selectedBrands);
-  let selectedPriceArray = getArraysInputs(selectedPrice);
-  let selectedOsArray = getArraysInputs(selectedOs);
-  console.log(selectedBrandArray);
+//   let selectedBrandArray = getArraysInputs(selectedBrands);
+//   let selectedPriceArray = getArraysInputs(selectedPrice);
+//   let selectedOsArray = getArraysInputs(selectedOs);
+//   console.log(selectedBrandArray);
 
-  // let obj= {brand: selectedBrandArray,
-  //           price: selectedPriceArray,
-  //           os: selectedOsArray
-  // }
+//   // let obj= {brand: selectedBrandArray,
+//   //           price: selectedPriceArray,
+//   //           os: selectedOsArray
+//   // }
 
-  if (
-    selectedBrandArray.length > 0 &&
-    (selectedPriceArray.length === 0) & (selectedOsArray.length === 0)
-  ) {
-    displayProducts((item) => multipleBrands(item, selectedBrandArray));
-  } else if (
-    selectedBrandArray.length > 0 &&
-    selectedPriceArray.length > 0 &&
-    selectedOsArray.length === 0
-  ) {
-    displayProducts(
-      (item) =>
-        multipleBrands(item, selectedBrandArray) &&
-        multiplePrices(item, selectedPriceArray)
-    );
-  } else if (
-    selectedBrandArray.length > 0 &&
-    selectedPriceArray.length === 0 &&
-    selectedOsArray.length > 0
-  ) {
-    displayProducts(
-      (item) =>
-        multipleBrands(item, selectedBrandArray) &&
-        multipleOs(item, selectedOsArray)
-    );
-  } else if (
-    selectedBrandArray.length === 0 &&
-    selectedPriceArray.length > 0 &&
-    selectedOsArray.length > 0
-  ) {
-    displayProducts(
-      (item) =>
-        multiplePrices(item, selectedPriceArray) &&
-        multipleOs(item, selectedOsArray)
-    );
-  } else if (
-    selectedBrandArray.length === 0 &&
-    selectedPriceArray.length === 0 &&
-    selectedOsArray.length > 0
-  ) {
-    displayProducts((item) => multipleOs(item, selectedOsArray));
-  } else if (
-    selectedBrandArray.length === 0 &&
-    selectedPriceArray.length > 0 &&
-    selectedOsArray.length === 0
-  ) {
-    displayProducts((item) => multiplePrices(item, selectedPriceArray));
-  } else {
-    displayProducts(
-      (item) =>
-        multipleBrands(item, selectedBrandArray) &&
-        multipleOs(item, selectedOsArray) &&
-        multiplePrices(item, selectedPriceArray)
-    );
-  }
-}
+//   if (
+//     selectedBrandArray.length > 0 &&
+//     (selectedPriceArray.length === 0) & (selectedOsArray.length === 0)
+//   ) {
+//     displayProducts((item) => multipleBrands(item, selectedBrandArray));
+//   } else if (
+//     selectedBrandArray.length > 0 &&
+//     selectedPriceArray.length > 0 &&
+//     selectedOsArray.length === 0
+//   ) {
+//     displayProducts(
+//       (item) =>
+//         multipleBrands(item, selectedBrandArray) &&
+//         multiplePrices(item, selectedPriceArray)
+//     );
+//   } else if (
+//     selectedBrandArray.length > 0 &&
+//     selectedPriceArray.length === 0 &&
+//     selectedOsArray.length > 0
+//   ) {
+//     displayProducts(
+//       (item) =>
+//         multipleBrands(item, selectedBrandArray) &&
+//         multipleOs(item, selectedOsArray)
+//     );
+//   } else if (
+//     selectedBrandArray.length === 0 &&
+//     selectedPriceArray.length > 0 &&
+//     selectedOsArray.length > 0
+//   ) {
+//     displayProducts(
+//       (item) =>
+//         multiplePrices(item, selectedPriceArray) &&
+//         multipleOs(item, selectedOsArray)
+//     );
+//   } else if (
+//     selectedBrandArray.length === 0 &&
+//     selectedPriceArray.length === 0 &&
+//     selectedOsArray.length > 0
+//   ) {
+//     displayProducts((item) => multipleOs(item, selectedOsArray));
+//   } else if (
+//     selectedBrandArray.length === 0 &&
+//     selectedPriceArray.length > 0 &&
+//     selectedOsArray.length === 0
+//   ) {
+//     displayProducts((item) => multiplePrices(item, selectedPriceArray));
+//   } else {
+//     displayProducts(
+//       (item) =>
+//         multipleBrands(item, selectedBrandArray) &&
+//         multipleOs(item, selectedOsArray) &&
+//         multiplePrices(item, selectedPriceArray)
+//     );
+//   }
+// }
 
 // function buyProduct() {
 //   let buy = document.getElementById("buyProduct").getAttribute("value");
 
 //   console.log(buy);
 // }
+
+function resetfilter() {
+  window.location = window.location.pathname;
+}
