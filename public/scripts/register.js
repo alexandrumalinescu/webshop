@@ -67,7 +67,7 @@ if (document.getElementById("form")) {
         }),
       })
         .then((response) => {
-          //show modal registered success
+          alert("Registration complete");
           //save cookies
           window.location.href = "http://localhost:3000/phones";
         })
