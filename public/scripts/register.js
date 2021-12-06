@@ -35,7 +35,7 @@ if (document.getElementById("form")) {
         });
 
       window.location.href = "http://localhost:3000/phones";
-      console.log(users);
+      //console.log(users);
     } else {
       document.getElementById("same__password").style.display = "block";
     }

@@ -7,7 +7,7 @@ router.get("/", function (req, res, next) {
 
 router.post("/", function (req, res, next) {
   console.log(req.body);
-  fetch(`http://localhost:3001/register`, {
+  fetch(`http://localhost:3001/auth/register`, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
