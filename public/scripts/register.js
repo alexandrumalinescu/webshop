@@ -79,6 +79,8 @@ if (document.getElementById("form")) {
       //console.log(users);
     } else if (password !== confirmPassword) {
       document.getElementById("same__password").style.display = "block";
+    } else if (password === confirmPassword) {
+      document.getElementById("same__password").style.display = "none";
     }
   });
 }
