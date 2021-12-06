@@ -19,14 +19,10 @@ router.post("/", function (req, res, next) {
     }),
   })
     .then(function (response) {
-      // handle
-      //succes modal
       res.send("Successfully registered");
     })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-      res.send(error);
+    .catch((err) => {
+      console.log(err);
     });
 });
 
