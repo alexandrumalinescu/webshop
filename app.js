@@ -7,11 +7,11 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var usersRouter2 = require("./routes/users2");
 var phonesRouter = require("./routes/phones");
 const loginRouter = require("./routes/login");
 const detailsRouter = require("./routes/details");
 const registerRouter = require("./routes/register");
-const login2Router = require("./routes/login2");
 
 var app = express();
 
@@ -27,9 +27,9 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/users2", usersRouter);
 app.use("/phones", phonesRouter);
 app.use("/login", loginRouter);
-app.use("/login2", login2Router);
 //app.use("/details", detailsRouter);
 app.use("/details/:phone", detailsRouter);
 app.use("/register", registerRouter);

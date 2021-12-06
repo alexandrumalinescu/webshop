@@ -1,3 +1,5 @@
+// const axios = require("axios");
+
 let products = [
   {
     name: "Galaxy A12",
@@ -93,6 +95,10 @@ let products = [
   //let standardFee =  {standard_delivery_fee: 35}
   //let freeDelivery = {free_delivery_min_price: 500}
 ];
+
+// axios.get("http://localhost:3001/phones").then((response) => {
+//   console.log(response);
+// });
 
 function hideFilterBtn() {
   //document.getElementById("filter__btn").style.display = "none";

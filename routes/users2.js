@@ -13,7 +13,7 @@ router.get("/", function (req, res, next) {
       res.render("users", { title: "Users", users: response.data });
     })
     .catch(function (error) {
-      // console.log(error);
+      //console.log(error);
     })
     .then(function () {
       // always executed
