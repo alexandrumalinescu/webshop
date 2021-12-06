@@ -19,7 +19,8 @@ router.post("/", function (req, res, next) {
     }),
   })
     .then(function (response) {
-      // handle success
+      // handle
+      //succes modal
       res.send("Successfully registered");
     })
     .catch(function (error) {

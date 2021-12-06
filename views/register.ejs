@@ -42,6 +42,15 @@
                                 placeholder="Confirm Password" required>
                         </div>
                         <div id='same__password' style="display: none; color: red;">Must be the same password</div>
+                        <div class="errors">
+                            <ul>
+                                <li id="upper">At least one uppercase</li>
+                                <li id="lower">At least one lowercase</li>
+                                <li id="special_char">At least one special symbol</li>
+                                <li id="number">At least one number</li>
+                                <li id="length">At least 6 characters</li>
+                            </ul>
+                        </div>
                         <button type="submit" class="main__btn">Register</button>
                         <div class="register">
                             <p>Already have an account? <a href="/login">Login</a></p>
