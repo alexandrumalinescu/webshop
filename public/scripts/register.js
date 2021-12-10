@@ -1,4 +1,11 @@
 const form = document.getElementById("form");
+const rules = document.getElementById("password");
+
+rules.addEventListener("click", () => {
+  let showePasswordErrors = document.getElementsByClassName("errors")[0];
+  showePasswordErrors.style.display = "block";
+});
+
 if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
