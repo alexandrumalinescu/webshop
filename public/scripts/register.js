@@ -1,7 +1,8 @@
-if (document.getElementById("form")) {
-  document.getElementById("form").addEventListener("submit", function (e) {
+const form = document.getElementById("form");
+if (form) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const form = document.getElementById("form");
+
     let username = document.getElementById("username").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;

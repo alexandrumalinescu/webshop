@@ -17,9 +17,9 @@ if (document.getElementById("form")) {
     }).then((data) => {
       console.log(data);
       if (data.status === 200) {
-        window.location.href = "http://localhost:3000/phones";
+        console.log("login succes");
       } else {
-        window.location.href = "http://localhost:3000";
+        console.log("could not login");
       }
     });
     // let userfilter = users.filter(
