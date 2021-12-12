@@ -1,7 +1,7 @@
 const form = document.getElementById("form");
 const rules = document.getElementById("password");
 
-rules.addEventListener("click", () => {
+rules.addEventListener("keypress", () => {
   let showePasswordErrors = document.getElementsByClassName("errors")[0];
   showePasswordErrors.style.display = "block";
 });
@@ -75,15 +75,22 @@ if (form) {
         }),
       })
         .then((response) => {
-          alert("Registration complete");
+          //document.getElementsByClassName("main__container").style.display =
+          "none";
+          document.getElementsByClassName(
+            "toast-registration"
+          )[0].style.display = "block";
+          let getRedirectBtn = document.getElementById("redirect-to-login");
+          getRedirectBtn.addEventListener("click", () => {
+            window.location.href = "http://localhost:3000/auth/login";
+          });
+
           //save cookies
-          window.location.href = "http://localhost:3000/phones";
         })
         .catch((err) => {
           console.log(err);
         });
 
-      window.location.href = "http://localhost:3000/phones";
       //console.log(users);
     } else if (password !== confirmPassword) {
       document.getElementById("same__password").style.display = "block";
