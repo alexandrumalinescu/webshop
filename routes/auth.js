@@ -30,6 +30,7 @@ router.post("/login", (req, res) => {
 
       if (user) {
         //console.log(user);
+        //document.getElementById("toast-login").style.display = "block";
         res.redirect("/phones");
       }
     })

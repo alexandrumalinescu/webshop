@@ -11,7 +11,7 @@
                     <div class="aa mb-2 d-flex align-content-center justify-content-evenly">
                         <i class="fas fa-user fa-2x"></i>
                         <input type="email" class="form-control " id="username" aria-describedby="emailHelp"
-                            placeholder="username" name="email" />
+                            placeholder="email" name="email" />
                     </div>
                     <div class="mb-2 d-flex align-content-center">
                         <i class="fas fa-lock fa-2x"></i>
@@ -22,7 +22,14 @@
                     <p>You don't have an account? <a href="/register">Register</a></p>
                     <div class="register"></div>
                     <div id='invalid' style="display: none">Invalid email or password</div>
+
+                    <div id="toast-login">
+                        <span>Login successful!</span>
+                        <button id='redirect-to-login'>OK</button>
+                    </div>
+
                 </form>
+
             </main>
         </body>
 

@@ -75,8 +75,6 @@ if (form) {
         }),
       })
         .then((response) => {
-          //document.getElementsByClassName("main__container").style.display =
-          "none";
           document.getElementsByClassName(
             "toast-registration"
           )[0].style.display = "block";

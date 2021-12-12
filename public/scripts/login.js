@@ -15,22 +15,13 @@ if (document.getElementById("form")) {
       },
       body: JSON.stringify({ email: username, password: password }),
     }).then((data) => {
-      console.log(data);
+      // document.getElementById("toast-login").style.display = "block";
+      //console.log(data);
       if (data.status === 200) {
-        console.log("login succes");
+        // window.location.href = "http://localhost:3000/phones";
       } else {
         console.log("could not login");
       }
     });
-    // let userfilter = users.filter(
-    //   (user) => user.email === username && user.password === password
-    // );
-    // console.log(username);
-    // console.log(password);
-    // console.log(userfilter);
-
-    if (userfilter.length > 0) {
-      window.location.href = "http://localhost:3000/phones";
-    }
   });
 }
