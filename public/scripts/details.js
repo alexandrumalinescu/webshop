@@ -1,4 +1,4 @@
-let productObj = {
+const productObj = {
   products: [
     {
       name: "Galaxy A12",

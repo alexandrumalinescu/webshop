@@ -29,6 +29,7 @@ router.post("/login", (req, res) => {
       const user = response.data;
 
       if (user) {
+        //cookies
         //console.log(user);
         //document.getElementById("toast-login").style.display = "block";
         res.redirect("/phones");
