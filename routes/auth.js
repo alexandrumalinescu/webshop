@@ -1,5 +1,6 @@
 var express = require("express");
 const axios = require("axios").default;
+const cookieParser = require("cookie-parser");
 var router = express.Router();
 
 router.get("/login", function (req, res) {
@@ -10,13 +11,13 @@ router.get("/login", function (req, res) {
 
 router.post("/login", (req, res) => {
   console.log(req.body);
-  let username = req.body.email;
+  let email = req.body.email;
   let password = req.body.password;
   axios
     .post(
       `http://localhost:3001/auth/login`,
       {
-        email: username,
+        email: email,
         password: password,
       },
       {
@@ -29,6 +30,8 @@ router.post("/login", (req, res) => {
       const user = response.data;
 
       if (user) {
+        res.cookie("email", email, { secure: true });
+        //res.cookie("password", password, { secure: true });
         //cookies
         //console.log(user);
         //document.getElementById("toast-login").style.display = "block";
@@ -69,6 +72,16 @@ router.post("/register", function (req, res, next) {
       console.log(err);
       res.send(err);
     });
+});
+
+router.get("/logout", function (req, res, next) {
+  // clear the cookie
+  if (req.signedCookies.email) {
+    res.clearCookie("email");
+  }
+
+  // redirect to homepage
+  res.redirect("/#");
 });
 
 module.exports = router;

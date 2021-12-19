@@ -96,9 +96,8 @@ a {
   margin: 10px;
 }
 .search-box {
-  position: absolute;
-  top: 25px;
-  right: 20px;
+  padding: 5px;
+  margin-left: 5%;
 }
 
 .buy__btn {
@@ -119,4 +118,11 @@ a {
 }
 .buy__btn a:hover {
   color: white;
+}
+
+.user {
+  position: absolute;
+  top: 28px;
+  right: 35px;
+  cursor: pointer;
 }

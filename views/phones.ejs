@@ -9,73 +9,86 @@
 <link href="./stylesheets/style.css" rel="stylesheet" />
 <%- include('./partials/_head'); %>
     <%- include('./partials/_navbar'); %>
-        <img class="img__vodafone" src="./img/banner1.jpg" alt="logo-Vodafone">
-        <form class="d-flex search-box">
-            <input type="text" class="search-input" placeholder="Search brand..." />
-            <button type="button" class="search-button"><i class="fas fa-search fa-2xl"></i></button>
-        </form>
+        <% if (email) { %>
+            <h3 class="user">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+                <%= email %>
+            </h3>
+            <% } else{ } %>
+                <img class="img__vodafone" src="./img/banner1.jpg" alt="logo-Vodafone">
+                <form class="d-flex search-box">
+                    <input type="text" class="search-input" placeholder="Search brand..." />
+                    <button type="button" class="search-button"><i class="fas fa-search fa-2xl"></i></button>
+                </form>
 
-        <body>
-            <div class="content__wraper">
-                <h2>
-                    Alege-ti <span><strong>telefonul</strong></span>
-                </h2>
+                <body>
+                    <div class="content__wraper">
+                        <h2>
+                            Alege-ti <span><strong>telefonul</strong></span>
+                        </h2>
 
-                <div class="multiple__filter">
-                    <div class="search__byPrice d-flex">
-                        <label class="input-group-text" for="sort"><i class="fas fa-sort "></i> Sorteaza dupa
-                            pret:</label>
-                        <select id='select__order' name='select__order'>
-                            <option value="none">-</option>
-                            <option value="higherPrice">Cauta dupa pretul cel mai mic</option>
-                            <option value="lowerPrice">Cauta dupa pretul cel mai mare</option>
-                        </select>
+                        <div class="multiple__filter">
+                            <div class="search__byPrice d-flex">
+                                <label class="input-group-text" for="sort"><i class="fas fa-sort "></i> Sorteaza dupa
+                                    pret:</label>
+                                <select id='select__order' name='select__order'>
+                                    <option value="none">-</option>
+                                    <option value="higherPrice">Cauta dupa pretul cel mai mic</option>
+                                    <option value="lowerPrice">Cauta dupa pretul cel mai mare</option>
+                                </select>
+                            </div>
+
+                            <button type="button" id="filter__btn" onclick=hideFilterBtn()><i class="fas fa-sort"></i>
+                                Filtre</button>
+
+                            <form id='form' action="/phones">
+                                <fieldset id="filterBrand">
+                                    <legend>Filter by Brand:</legend>
+                                    <input type='checkbox' name="brand[]" id='samsung'
+                                        value="Samsung"><span>Samsung</span><br>
+                                    <input type='checkbox' name="brand[]" id='motorola'
+                                        value="Motorola"><span>Motorola</span><br>
+                                    <input type='checkbox' name="brand[]" id='apple'
+                                        value="Apple"><span>Apple</span><br>
+                                    <input type='checkbox' name="brand[]" id='xiaomi'
+                                        value="Xiaomi"><span>Xiaomi</span><br>
+                                    <input type='checkbox' name="brand[]" id='google'
+                                        value="Google"><span>Google</span><br>
+                                </fieldset>
+
+                                <fieldset id="filterPrice">
+                                    <legend>Filter by Price:</legend>
+                                    <input type="radio" name="price" id="price_between1" value="0-1000">0-1000
+                                    <br>
+                                    <input type="radio" name="price" id="price_between2" value="1001-3000">1001-3000
+                                    <br>
+                                    <input type="radio" name="price" id="price_between3" value="3001">Over 3001
+                                </fieldset>
+
+                                <fieldset id="filterOs">
+                                    <legend>Filter by OS:</legend>
+
+                                    <input type="radio" name='os' id='android' value='Android'>Android <br>
+                                    <input type="radio" name='os' id="iOS" value="iOS">iOS
+                                </fieldset>
+
+                                <input type="submit" id="submit" value="Filter" onsubmit=handleForm(e)>
+                                <input type="reset" id="reset" value="Reset" onclick=resetfilter()>
+                            </form>
+                        </div>
+
+                        <div id="container">
+
+                        </div>
                     </div>
 
-                    <button type="button" id="filter__btn" onclick=hideFilterBtn()><i class="fas fa-sort"></i>
-                        Filtre</button>
-
-                    <form id='form' action="/phones">
-                        <fieldset id="filterBrand">
-                            <legend>Filter by Brand:</legend>
-                            <input type='checkbox' name="brand[]" id='samsung' value="Samsung"><span>Samsung</span><br>
-                            <input type='checkbox' name="brand[]" id='motorola'
-                                value="Motorola"><span>Motorola</span><br>
-                            <input type='checkbox' name="brand[]" id='apple' value="Apple"><span>Apple</span><br>
-                            <input type='checkbox' name="brand[]" id='xiaomi' value="Xiaomi"><span>Xiaomi</span><br>
-                            <input type='checkbox' name="brand[]" id='google' value="Google"><span>Google</span><br>
-                        </fieldset>
-
-                        <fieldset id="filterPrice">
-                            <legend>Filter by Price:</legend>
-                            <input type="radio" name="price" id="price_between1" value="0-1000">0-1000
-                            <br>
-                            <input type="radio" name="price" id="price_between2" value="1001-3000">1001-3000
-                            <br>
-                            <input type="radio" name="price" id="price_between3" value="3001">Over 3001
-                        </fieldset>
-
-                        <fieldset id="filterOs">
-                            <legend>Filter by OS:</legend>
-
-                            <input type="radio" name='os' id='android' value='Android'>Android <br>
-                            <input type="radio" name='os' id="iOS" value="iOS">iOS
-                        </fieldset>
-
-                        <input type="submit" id="submit" value="Filter" onsubmit=handleForm(e)>
-                        <input type="reset" id="reset" value="Reset" onclick=resetfilter()>
-                    </form>
-                </div>
-
-                <div id="container">
-
-                </div>
-            </div>
 
 
 
-
-        </body>
-        <script src="./scripts/shopExercitiu.js"></script>
+                </body>
+                <script src="./scripts/shopExercitiu.js"></script>
 
 </html>

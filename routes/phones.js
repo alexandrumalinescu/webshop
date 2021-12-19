@@ -9,10 +9,13 @@ router.get("/", function (req, res, next) {
     price: req.query.price,
     operating_system: req.query.os,
   };
-  console.log(filterInput);
-
+  // console.log(filterInput);
+  let email = req.cookies.email;
+  if (email) {
+    console.log("welcome user " + email);
+  }
   //res.send(`brand : ${req.query.brand}`);
-  res.render("phones", { title: "Phones" });
+  res.render("phones", { title: "Phones", email: email });
   //console.log(content);
   // get phones array
   // filter phones array by query params
